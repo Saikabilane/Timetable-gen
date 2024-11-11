@@ -158,7 +158,7 @@ def class_courses(Class):
 
 # Parameters for the genetic algorithm
 POPULATION_SIZE = 25
-NUM_GENERATIONS = 25
+NUM_GENERATIONS = 2
 MUTATION_RATE = 0.1
 #NUM_CLASSES = len(set(classes))
 WORKING_DAYS = 5
@@ -422,7 +422,7 @@ def prepare_timetable_for_display(timetable):
     timetable_df = timetable_df.applymap(lambda x: ', '.join(map(str, x)) if isinstance(x, list) else str(x))
     return timetable_df
 
-st.subheader(f"The Following Timetable has the fitness score of {fitness(timetable)}.")
+#st.subheader(f"The Following Timetable has the fitness score of {fitness(timetable)}.")
 # Display in Streamlit after converting
 st.write("Class Timetable")
 timetable_df = prepare_timetable_for_display(timetable)
@@ -430,9 +430,10 @@ st.dataframe(timetable_df)
 st.write("Staff Timetable")
 fc_timetable_df = prepare_timetable_for_display(staff_timetable)
 st.dataframe(fc_timetable_df)
-conflicts = faccheck(timetable)
-
+#conflicts = faccheck(timetable)
+'''
 st.write("Classes that cannot be alloted are as follows:")
 st.write("Course Code - Faculty code - Class name - Timeslot")
 for conflict in conflicts:
     st.write(f"{conflict}")
+'''
