@@ -160,7 +160,7 @@ def class_courses(Class):
 POPULATION_SIZE = 25
 NUM_GENERATIONS = 25
 MUTATION_RATE = 0.1
-NUM_CLASSES = len(set(classes))
+#NUM_CLASSES = len(set(classes))
 WORKING_DAYS = 5
 
 #To check if the given class is lab or theory
